@@ -30,7 +30,6 @@ public class ReqRestApiTests {
         assertFalse(response.getData().isEmpty());
         assertEquals("https://reqres.in/#support-heading", response.getSupport().getUrl());
         assertEquals(supportText, response.getSupport().getText());
-
     }
 
     @Test
