@@ -1,0 +1,534 @@
+ACCEPTANCE CRITERIA:
+
+
+Test scenario 1: Successful get request (Get user's list)
+GIVEN a get request is sent to the server (https://reqres.in/api/users?page=[page number])
+WHEN the server responds with status code 200OK
+THEN server responds back with body result printed like this
+{
+    "page": ,
+    "per_page": ,
+    "total": ,
+    "total_pages": ,
+    "data": [
+        {
+            "id": ,
+            "email": "",
+            "first_name": "",
+            "last_name": "",
+            "avatar": ""
+        },
+        {
+            "id": ,
+            "email": "",
+            "first_name": "",
+            "last_name": "",
+            "avatar": ""
+        },
+        {
+            "id": ,
+            "email": "",
+            "first_name": "",
+            "last_name": "",
+            "avatar": ""
+        },
+        ........................................................
+
+
+Test scenario 2: Successful get request (Single user)
+GIVEN a get request is sent to the server (https://reqres.in/api/users/[id])
+WHEN the server responds with status code 200OK
+THEN server responds back with body result printed like this
+{
+    "data": {
+        "id": ,
+        "email": "",
+        "first_name": "",
+        "last_name": "",
+        "avatar": ""
+    },
+    "support": {
+        "url": "",
+        "text": ""
+    }
+}
+
+
+Test scenario 3: Unsuccessful get request (Single user "User not found")
+GIVEN a get request is sent to the server (https://reqres.in/api/users/[id])
+WHEN the server responds with status code 404 Not found
+THEN  server responds back with empty body
+AND result printed like this {}
+
+
+Test scenario 4: Successful get request (Get Resource's list)
+GIVEN a get request is sent to the server (https://reqres.in/api/unknown)
+WHEN the server responds with status code 200OK
+THEN server responds back with body result printed like this
+{
+    "page": ,
+    "per_page": ,
+    "total": ,
+    "total_pages": ,
+    "data": [
+        {
+            "id": ,
+            "name": "",
+            "year": ,
+            "color": "#",
+            "pantone_value": ""
+        },
+        {
+            "id": ,
+            "name": "",
+            "year": ,
+            "color": "#",
+            "pantone_value": ""
+        },
+        {
+            "id": ,
+            "name": "",
+            "year": ,
+            "color": "#",
+            "pantone_value": ""
+        },
+        ........................................................
+
+
+Test scenario 5: Successful get request (Single resource)
+GIVEN a get request is sent to the server (https://reqres.in/api/unknown/[id])
+WHEN the server responds with status code 200OK
+THEN server responds back with body result printed like this
+{
+    "data": {
+        "id": ,
+        "name": "",
+        "year": ,
+        "color": "",
+        "pantone_value": ""
+    },
+    "support": {
+        "url": "",
+        "text": ""
+    }
+}
+
+
+Test scenario 6: Unsuccessful get request (Single resource "User not found")
+GIVEN a get request is sent to the server (https://reqres.in/api/unknown/[id])
+WHEN the server responds with status code 404 Not found
+THEN server responds back with empty body
+AND result printed like this {}
+
+
+Test scenario 7: Successful post request (Create user)
+GIVEN a post request is sent to the endpoint (https://reqres.in/api/users)
+AND a body request is sent like this:
+{
+    "name": "",
+    "job": ""
+}
+WHEN the server response is status code: 201Created
+THEN server respond back with body result printed like this:
+{
+    "name": "",
+    "job": " ",
+    "id": "",
+    "createdAt": ""
+}
+
+
+Test scenario 8: Successful put request (Update user)
+GIVEN a put request is sent to the server (https://reqres.in/api/users/[id])
+AND a body request is sent like this:
+{
+    "name": "",
+    "job": ""
+}
+WHEN the server response is status code: 200OK
+THEN server respond back with body result printed like this:
+{
+    "id": [id],
+    "title": "",
+    "body": ""
+}
+
+
+Test scenario 9: Successful patch request (Update user)
+GIVEN a patch request is sent to the server (https://reqres.in/api/users/[id])
+AND a body request is sent like this:
+{
+    "name": "",
+    "job": ""
+}
+WHEN the server response is status code: 200OK
+THEN server respond back with body result printed like this:
+{
+    "id": [id],
+    "title": "",
+    "body": ""
+}
+
+
+Test scenario 10: Successful delete request (Delete user)
+GIVEN a delete request is sent to the server (https://reqres.in/api/users/[id])
+WHEN the server responds with status code 204 No Content
+THEN server does not respond back with response body
+
+
+Test scenario 11: Successful post request (Register user)
+GIVEN a post request is sent to the server (https://reqres.in/api/register)
+AND a body request is sent like this:
+{
+    "email": "",
+    "password": ""
+}
+WHEN the server response is status code: 200OK
+THEN server respond back with body result printed like this:
+{
+    "id": ,
+    "token": ""
+}
+
+
+Test scenario 12: Unsuccessful post request (Unsuccessful register)
+GIVEN a post request is sent to the server (https://reqres.in/api/register)
+AND a body request is sent like this:
+{
+    "email": "",
+}
+WHEN the server response is status code: 400 Bad Request
+THEN server respond back with body result printed like this:
+{
+    "error": "Missing password"
+}
+
+
+Test scenario 13: Successful post request (Successful login)
+GIVEN a post request is sent to the server (https://reqres.in/api/login)
+AND a body request is sent like this:
+{
+    "email": "",
+    "password": ""
+}
+WHEN the server response is status code: 400 Bad Request
+THEN server respond back with body result printed like this:
+{
+    "token": ""
+}
+
+
+Test scenario 14: Unsuccessful post request (Unsuccessful login)
+GIVEN a post request is sent to the server (https://reqres.in/api/login)
+AND a body request is sent like this:
+{
+    "email": "",
+}
+WHEN the server response is status code: 400 Bad Request
+THEN server respond back with body result printed like this:
+{
+    "error": "Missing password"
+}
+
+
+TEST CASES: ------------------------------------------------------------------------------------------------------------
+
+
+Test case 1: Successful get request (Get user's list) (PASS)
+GIVEN a get request is sent to the server "https://reqres.in/api/users?page=2"
+WHEN the server responds with status code 200OK
+THEN server responds back with body result printed like this
+{
+    "page": 2,
+    "per_page": 6,
+    "total": 12,
+    "total_pages": 2,
+    "data": [
+        {
+            "id": 7,
+            "email": "michael.lawson@reqres.in",
+            "first_name": "Michael",
+            "last_name": "Lawson",
+            "avatar": "https://reqres.in/img/faces/7-image.jpg"
+        },
+        {
+            "id": 8,
+            "email": "lindsay.ferguson@reqres.in",
+            "first_name": "Lindsay",
+            "last_name": "Ferguson",
+            "avatar": "https://reqres.in/img/faces/8-image.jpg"
+        },
+        {
+            "id": 9,
+            "email": "tobias.funke@reqres.in",
+            "first_name": "Tobias",
+            "last_name": "Funke",
+            "avatar": "https://reqres.in/img/faces/9-image.jpg"
+        },
+        ........................................................
+
+
+Test Case 2: Successful get request (Single user) (PASS)
+GIVEN a get request is sent to the endpoint (https://reqres.in/api/users),
+AND a get request is made for the user with an id "2" (https://reqres.in/api/users/2)
+AND values for the user with an id "2" are:
+{
+    "data": {
+        "id": 2,
+        "email": "janet.weaver@reqres.in",
+        "first_name": "Janet",
+        "last_name": "Weaver",
+        "avatar": "https://reqres.in/img/faces/2-image.jpg"
+    },
+    "support": {
+        "url": "https://reqres.in/#support-heading",
+        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+    }
+}
+WHEN the server response is status code: 200OK,
+THEN server respond back with body result printed like this:
+{
+    "data": {
+        "id": 2,
+        "email": "janet.weaver@reqres.in",
+        "first_name": "Janet",
+        "last_name": "Weaver",
+        "avatar": "https://reqres.in/img/faces/2-image.jpg"
+    },
+    "support": {
+        "url": "https://reqres.in/#support-heading",
+        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+    }
+}
+
+
+Test case 3: Unsuccessful get request (Single user "User not found") (PASS)
+GIVEN a get request is sent to the server (https://reqres.in/api/users)
+AND a get request is made for the user with an id "28" (https://reqres.in/api/users/28)
+WHEN the server responds with status code 404 Not found
+THEN  server responds back with empty body
+AND result printed like this {}
+
+
+Test case 4: Successful get request (Get Resource's list) (PASS)
+GIVEN a get request is sent to the server "https://reqres.in/api/unknown"
+WHEN the server responds with status code 200OK
+THEN server responds back with body result printed like this
+{
+    "page": 1,
+    "per_page": 6,
+    "total": 12,
+    "total_pages": 2,
+    "data": [
+        {
+            "id": 1,
+            "name": "cerulean",
+            "year": 2000,
+            "color": "#98B2D1",
+            "pantone_value": "15-4020"
+        },
+        {
+            "id": 2,
+            "name": "fuchsia rose",
+            "year": 2001,
+            "color": "#C74375",
+            "pantone_value": "17-2031"
+        },
+        {
+            "id": 3,
+            "name": "true red",
+            "year": 2002,
+            "color": "#BF1932",
+            "pantone_value": "19-1664"
+        },
+        ........................................................
+
+
+Test case 5: Successful get request (Single resource) (PASS)
+GIVEN a get request is sent to the server "https://reqres.in/api/unknown"
+AND a get request is made for the resource with an id "5" (https://reqres.in/api/unknown/5)
+AND the values for the resource with and id "5" are:
+{
+    "data": {
+        "id": 5,
+        "name": "tigerlily",
+        "year": 2004,
+        "color": "#E2583E",
+        "pantone_value": "17-1456"
+    },
+    "support": {
+        "url": "https://reqres.in/#support-heading",
+        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+    }
+}
+WHEN the server responds with status code 200OK
+THEN server responds back with body result printed like this
+{
+    "data": {
+        "id": 5,
+        "name": "tigerlily",
+        "year": 2004,
+        "color": "#E2583E",
+        "pantone_value": "17-1456"
+    },
+    "support": {
+        "url": "https://reqres.in/#support-heading",
+        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+    }
+}
+
+Test case 6: Unsuccessful get request (Single resource "User not found") (PASS)
+GIVEN a get request is sent to the server ("https://reqres.in/api/unknown/23)
+WHEN the server responds with status code 404 Not found
+THEN server responds back with empty body
+AND result printed like this {}
+
+
+Test case 7: Successful post request (Create user) (PASS)
+GIVEN a post request is sent to the endpoint (https://reqres.in/api/users)
+AND a body request is sent like this:
+{
+    "name": "Gorjan",
+    "job": "Quality Assurance"
+}
+WHEN the server response is status code: 201Created
+THEN server respond back with body result printed like this:
+{
+    "name": "Gorjan",
+    "job": "Quality Assurance",
+    "id": "27",
+    "createdAt": "2024-09-23T16:10:22.878Z"
+}
+
+
+Test case 8: Successful put request (Update user) (PASS) // nema logika get requestot so putot ama postapkata e taa.. :)
+GIVEN a put request is sent to the server (https://reqres.in/api/users)
+AND a put request is made for the user with and id "5" (https://reqres.in/api/users/5)
+AND the body values for the user "5" are:
+{
+    "data": {
+        "id": 5,
+        "email": "charles.morris@reqres.in",
+        "first_name": "Charles",
+        "last_name": "Morris",
+        "avatar": "https://reqres.in/img/faces/5-image.jpg"
+    },
+    "support": {
+        "url": "https://reqres.in/#support-heading",
+        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+    }
+}
+AND "name" value is set to "Gorjan"
+AND "job" value is set to "Quality Assurance"
+AND a body request is sent like this:
+{
+    "name": "Gorjan",
+    "job": "Quality Assurance"
+}
+WHEN the server response is status code: 200OK
+THEN server respond back with body result printed like this:
+{
+    "name": "Gorjan",
+    "job": "Quality Assurance",
+    "updatedAt": "2024-09-23T20:38:21.631Z"
+}
+
+Test case 9: Successful patch request (Update user) (PASS)              //nema logika (ne se isti) get requestot so putot ama postapkata e taa.. :) isto i tuka
+GIVEN a patch request is sent to the server (https://reqres.in/api/users)
+AND a put request is made for the user with and id "5" (https://reqres.in/api/users/5)
+AND the body values for the user "5" are:
+{
+    "data": {
+        "id": 5,
+        "email": "charles.morris@reqres.in",
+        "first_name": "Charles",
+        "last_name": "Morris",
+        "avatar": "https://reqres.in/img/faces/5-image.jpg"
+    },
+    "support": {
+        "url": "https://reqres.in/#support-heading",
+        "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+    }
+}
+AND "name" value is set to "Gorjan"
+AND "job" value is set to "Quality Assurance"
+AND a sent body request is like this:
+{
+    "name": "Gorjan",
+    "job": "Quality Assurance"
+}
+WHEN the server response is status code: 200OK
+THEN server respond back with body result printed like this:
+{
+    "name": "Gorjan",
+    "job": "Quality Assurance",
+    "updatedAt": "2024-09-23T20:38:21.631Z"
+}
+
+
+Test case 10: Successful delete request (Delete user) (PASS)
+GIVEN a delete request is sent to the server (https://reqres.in/api/users)
+WHEN a delete request is made for the user with an id "5" (https://reqres.in/api/users/5)
+THEN the server responds with status code 204 No Content
+AND server does not respond back with response body
+
+
+Test case 11: Successful post request (Register user) (PASS)
+GIVEN a post request is sent to the server (https://reqres.in/api/register)
+AND a body request is sent like this:
+{
+    "email": "eve.holt@reqres.in",
+    "password": "pistol"
+}
+WHEN the server response is status code: 200OK
+THEN server respond back with body result printed like this:
+{
+    "id": 4,
+    "token": "QpwL5tke4Pnpja7X4"
+}
+
+
+Test case 12: Unsuccessful post request (Unsuccessful register) (PASS)
+GIVEN a post request is sent to the server (https://reqres.in/api/register)
+AND a body request is sent like this:
+{
+    "email": "eve.holt@reqres.in",
+}
+WHEN the server response is status code: 400 Bad Request
+THEN server respond back with body result printed like this:
+{
+    "error": "Missing password"
+}
+
+
+Test case 13: Successful post request (Successful login) (PASS)
+GIVEN a post request is sent to the server (https://reqres.in/api/login)
+AND a body request is sent like this:
+{
+    "email": "eve.holt@reqres.in",
+    "password": "cityslicka"
+}
+WHEN the server response is status code: 400 Bad Request
+THEN server respond back with body result printed like this:
+{
+    "token": "QpwL5tke4Pnpja7X4"
+}
+
+
+Test case 14: Unsuccessful post request (Unsuccessful login) (PASS)
+GIVEN a post request is sent to the server (https://reqres.in/api/login)
+AND a body request is sent like this:
+{
+    "email": "peter@klaven",
+}
+WHEN the server response is status code: 400 Bad Request
+THEN server respond back with body result printed like this:
+{
+    "error": "Missing password"
+}
+
+
+
+
+
+
