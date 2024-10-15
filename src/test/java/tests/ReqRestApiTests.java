@@ -6,7 +6,6 @@ import models.request.ReqResPostPutCreateUpdateUserModelRequest;
 import models.request.ReqResPostRegisterLoginUserModelRequest;
 import models.request.ReqResPostUnsuccessfulRegisterLoginModelRequest;
 import models.response.*;
-
 import org.junit.Test;
 import utils.HelperClass;
 
