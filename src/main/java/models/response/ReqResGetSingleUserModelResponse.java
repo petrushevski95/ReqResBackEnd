@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import models.response.objects.ReqResUsersDataModel;
-import models.response.objects.ReqResSupportModel;
+import models.response.modeldata.ReqResUsersDataModel;
+import models.response.modeldata.ReqResSupportModel;
 
 @NoArgsConstructor
 @AllArgsConstructor
