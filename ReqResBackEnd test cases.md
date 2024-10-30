@@ -59,8 +59,8 @@
     }
 }
 ```
-**WHEN** the server response is status code: 200 OK
-**THEN** server respond back with body result printed like this:
+**WHEN** the server response is status code: 200 OK     
+**THEN** server respond back with body result printed like this:       
 ```json
 {
     "data": {
@@ -91,7 +91,7 @@
 
 **Given** A GET request is sent to the server: `https://reqres.in/api/unknown`  
 **When** The server responds with status code 200 OK  
-**Then** The server responds back with body result printed like this:
+**Then** The server responds back with body result printed like this:    
 
 ```json
 {
@@ -129,7 +129,7 @@
 
 **Given** A GET request is sent to the server: `https://reqres.in/api/unknown`  
 **And** A GET request is made for the resource with an ID "5": `https://reqres.in/api/unknown/5`  
-**And** The values for the resource with an ID "5" are:
+**And** The values for the resource with an ID "5" are:  
 
 ```json
 {
@@ -147,8 +147,8 @@
 }
 ```
 
-**WHEN** the server responds with status code 200 OK
-**THEN** server responds back with body result printed like this
+**WHEN** the server responds with status code 200 OK      
+**THEN** server responds back with body result printed like this      
 ```json
 {
     "data": {
@@ -164,12 +164,12 @@
     }
 }
 ```
-## Test Case 6: Unsuccessful GET Request (Single Resource "User Not Found") (PASS)
+## Test Case 6: Unsuccessful GET Request (Single Resource "User Not Found") (PASS)   
 
 **Given** A GET request is sent to the server: `https://reqres.in/api/unknown/23`  
 **When** The server responds with status code `404 Not Found`  
 **Then** The server responds back with an empty body  
-**And** the result printed like this:
+**And** the result printed like this: 
 
 ```json
 {}
@@ -184,8 +184,8 @@
     "job": "Quality Assurance"
 }
 ```
-**WHEN** the server response is status code: 201 Created
-**THEN** server respond back with body result printed like this:
+**WHEN** the server response is status code: 201 Created     
+**THEN** server respond back with body result printed like this:       
 ```json
 {
     "name": "Gorjan",
@@ -214,17 +214,17 @@
     }
 }
 ```
-**AND** "name" value is set to "Gorjan"
-**AND** "job" value is set to "Quality Assurance"
-**AND** a body request is sent like this:
+**AND** "name" value is set to "Gorjan"    
+**AND** "job" value is set to "Quality Assurance"    
+**AND** a body request is sent like this:    
 ```json
 {
     "name": "Gorjan",
     "job": "Quality Assurance"
 }
 ```
-**WHEN** the server response is status code: 200 OK
-**THEN** server respond back with body result printed like this:
+**WHEN** the server response is status code: 200 OK    
+**THEN** server respond back with body result printed like this:    
 ```json
 {
     "name": "Gorjan",
@@ -232,7 +232,7 @@
     "updatedAt": "2024-09-23T20:38:21.631Z"
 }
 ```
-## Test Case 9: Successful PATCH Request (Update User) (PASS)
+## Test Case 9: Successful PATCH Request (Update User) (PASS)   
 
 **Given** A PATCH request is sent to the server: `https://reqres.in/api/users`  
 **And** A PATCH request is made for the user with an ID "5": `https://reqres.in/api/users/5`  
@@ -252,17 +252,17 @@
     }
 }
 ```
-**AND** "name" value is set to "Gorjan"
-**AND** "job" value is set to "Quality Assurance"
-**AND** a sent body request is like this:
+**AND** "name" value is set to "Gorjan"     
+**AND** "job" value is set to "Quality Assurance"    
+**AND** a sent body request is like this:     
 ```json
 {
     "name": "Gorjan",
     "job": "Quality Assurance"
 }
 ```
-**WHEN** the server response is status code: 200 OK
-**THEN** server respond back with body result printed like this:
+**WHEN** the server response is status code: 200 OK     
+**THEN** server respond back with body result printed like this:     
 ```json
 {
     "name": "Gorjan",
@@ -288,8 +288,8 @@
     "password": "pistol"
 }
 ```
-**WHEN** the server response is status code: 200 OK
-**THEN** server respond back with body result printed like this:
+**WHEN** the server response is status code: 200 OK     
+**THEN** server respond back with body result printed like this:     
 ```json
 {
     "id": 4,
@@ -299,14 +299,14 @@
 ## Test Case 12: Unsuccessful POST Request (Unsuccessful Register) (PASS)
 
 **Given** A POST request is sent to the server: `https://reqres.in/api/register`  
-**And** A body request is sent like this:
+**And** A body request is sent like this:   
 ```json
 {
     "email": "eve.holt@reqres.in"
 }
 ```
-**WHEN** the server response is status code: 400 Bad Request
-**THEN** server respond back with body result printed like this:
+**WHEN** the server response is status code: 400 Bad Request    
+**THEN** server respond back with body result printed like this:    
 ```json
 {
     "error": "Missing password"
@@ -315,7 +315,7 @@
 ## Test Case 13: Successful POST Request (Successful Login) (PASS)
 
 **Given** A POST request is sent to the server: `https://reqres.in/api/login`  
-**And** A body request is sent like this:
+**And** A body request is sent like this:   
 
 ```json
 {
@@ -323,8 +323,8 @@
     "password": "cityslicka"
 }
 ```
-**WHEN** the server response is status code: 400 Bad Request
-**THEN** server respond back with body result printed like this:
+**WHEN** the server response is status code: 400 Bad Request     
+**THEN** server respond back with body result printed like this:    
 ```json
 {
     "token": "QpwL5tke4Pnpja7X4"
@@ -334,16 +334,16 @@
 
 ## Test Case 14: Unsuccessful POST Request (Unsuccessful Login) (PASS)
 
-**Given** A POST request is sent to the server: `https://reqres.in/api/login`  
-**And** A body request is sent like this:
+**Given** A POST request is sent to the server: `https://reqres.in/api/login`    
+**And** A body request is sent like this:  
 
 ```json
 {
     "email": "peter@klaven"
 }
 ```
-WHEN the server response is status code: 400 Bad Request
-THEN server respond back with body result printed like this:
+WHEN the server response is status code: 400 Bad Request      
+THEN server respond back with body result printed like this:   
 ```json
 {
     "error": "Missing password"
