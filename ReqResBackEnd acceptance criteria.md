@@ -2,9 +2,9 @@
 
 ## Test Scenario 1: Successful GET Request (Get User's List)
 
-**Given**  A GET request is sent to the server:  `https://reqres.in/api/users?page=[page number]`
-**When**  The server responds with status code 200 OK
-**Then**  The server responds back with a body result printed like this:
+**Given**  A GET request is sent to the server:  `https://reqres.in/api/users?page=[page number]`    
+**When**  The server responds with status code 200 OK    
+**Then**  The server responds back with a body result printed like this:    
 ```json
 {
     "page": ,
@@ -41,7 +41,7 @@
 
 **Given** A GET request is sent to the server: `https://reqres.in/api/users/[id]`  
 **When** The server responds with status code 200 OK  
-**Then** The server responds back with a body result printed like this:
+**Then** The server responds back with a body result printed like this:   
 
 ```json
 {
@@ -61,18 +61,18 @@
 ## Test Scenario 3: Unsuccessful GET Request (Single User "User Not Found")
 
 **Given** A GET request is sent to the server: `https://reqres.in/api/users/[id]`  
-**When** The server responds with status code 404 Not Found  
+**When** The server responds with status code 404 Not Found   
 **Then** The server responds back with an empty body  
 **And** the result printed like this:  
 
 ```json
 {}
 ```
-## Test Scenario 4: Successful GET Request (Get Resource's List)
+## Test Scenario 4: Successful GET Request (Get Resource's List)   
 
-**Given** A GET request is sent to the server: `https://reqres.in/api/unknown`  
+**Given** A GET request is sent to the server: `https://reqres.in/api/unknown`    
 **When** The server responds with status code 200 OK  
-**Then** The server responds back with a body result printed like this:
+**Then** The server responds back with a body result printed like this:  
 
 ```json
 {
@@ -110,7 +110,7 @@
 
 **Given** A GET request is sent to the server: `https://reqres.in/api/unknown/[id]`  
 **When** The server responds with status code 200 OK  
-**Then** The server responds back with a body result printed like this:
+**Then** The server responds back with a body result printed like this:  
 
 ```json
 {
@@ -130,9 +130,9 @@
 ## Test Scenario 6: Unsuccessful GET Request (Single Resource "User Not Found")
 
 **Given** A GET request is sent to the server: `https://reqres.in/api/unknown/[id]`  
-**When** The server responds with status code 404 Not Found  
-**Then** The server responds back with an empty body  
-**And** the result printed like this:  
+**When** The server responds with status code 404 Not Found    
+**Then** The server responds back with an empty body   
+**And** the result printed like this:   
 
 ```json
 {}
@@ -140,15 +140,15 @@
 ## Test Scenario 7: Successful POST Request (Create User)
 
 **Given** A POST request is sent to the endpoint: `https://reqres.in/api/users`  
-**And** a body request is sent like this:
+**And** a body request is sent like this:   
 ```json
 {
     "name": "",
     "job": ""
 }
 ```
-**WHEN** the server response is status code: 201 Created
-**THEN** server respond back with body result printed like this:
+**WHEN** the server response is status code: 201 Created      
+**THEN** server respond back with body result printed like this:    
 ```json
 {
     "name": "",
@@ -159,8 +159,8 @@
 ```
 ## Test Scenario 8: Successful PUT Request (Update User)
 
-**Given** A PUT request is sent to the server: `https://reqres.in/api/users/[id]`  
-**And** a body request is sent like this:
+**Given** A PUT request is sent to the server: `https://reqres.in/api/users/[id]`   
+**And** a body request is sent like this:    
 
 ```json
 {
@@ -168,8 +168,8 @@
     "job": ""
 }
 ```
-**When** The server response is status code 200 OK  
-**Then** The server responds back with a body result printed like this:
+**When** The server response is status code 200 OK    
+**Then** The server responds back with a body result printed like this:     
 ```json
 {
     "id": [id],
@@ -181,7 +181,7 @@
 ## Test Scenario 9: Successful PATCH Request (Update User)
 
 **Given** A PATCH request is sent to the server: `https://reqres.in/api/users/[id]`  
-**And** a body request is sent like this:
+**And** a body request is sent like this:   
 
 ```json
 {
@@ -189,8 +189,8 @@
     "job": ""
 }
 ```
-**WHEN** the server response is status code: 200 OK
-**THEN** server respond back with body result printed like this:
+**WHEN** the server response is status code: 200 OK     
+**THEN** server respond back with body result printed like this:    
 ```json
 {
     "id": [id],
@@ -201,13 +201,13 @@
 ## Test Scenario 10: Successful DELETE Request (Delete User)
 
 **Given** A DELETE request is sent to the server: `https://reqres.in/api/users/[id]`  
-**When** The server responds with status code 204 No Content  
-**Then** The server does not respond back with a response body.
+**When** The server responds with status code 204 No Content   
+**Then** The server does not respond back with a response body.    
 
-## Test Scenario 11: Successful POST Request (Register User)
+## Test Scenario 11: Successful POST Request (Register User)   
 
-**Given** A POST request is sent to the server: `https://reqres.in/api/register`  
-**And** a body request is sent like this:
+**Given** A POST request is sent to the server: `https://reqres.in/api/register`    
+**And** a body request is sent like this:   
 
 ```json
 {
@@ -215,8 +215,8 @@
     "password": ""
 }
 ```
-**When** The server response is status code `200 OK`  
-**Then** The server responds back with a body result printed like this:
+**When** The server response is status code `200 OK`    
+**Then** The server responds back with a body result printed like this:    
 
 ```json
 {
@@ -227,24 +227,24 @@
 ## Test Scenario 12: Unsuccessful POST Request (Unsuccessful Register)
 
 **Given** A POST request is sent to the server: `https://reqres.in/api/register`  
-**And** a body request is sent like this:
+**And** a body request is sent like this:    
 
 ```json
 {
     "email": ""
 }
-```
-**WHEN** the server response is status code: 400 Bad Request
-**THEN** server respond back with body result printed like this:
+``` 
+**WHEN** the server response is status code: 400 Bad Request    
+**THEN** server respond back with body result printed like this:     
 ```json
 {
     "error": "Missing password"
 }
 ```
-## Test Scenario 13: Successful POST Request (Successful Login)
+## Test Scenario 13: Successful POST Request (Successful Login)    
 
-**Given** A POST request is sent to the server: `https://reqres.in/api/login`  
-**And** a body request is sent like this:
+**Given** A POST request is sent to the server: `https://reqres.in/api/login`    
+**And** a body request is sent like this:     
 
 ```json
 {
@@ -252,25 +252,25 @@
     "password": ""
 }
 ```
-**WHEN** the server response is status code: 201 Created
-**THEN** server respond back with body result printed like this:
+**WHEN** the server response is status code: 201 Created     
+**THEN** server respond back with body result printed like this:      
 ```json
 {
     "token": ""
 }
 ```
-## Test Scenario 14: Unsuccessful POST Request (Unsuccessful Login)
+## Test Scenario 14: Unsuccessful POST Request (Unsuccessful Login)     
 
 **Given** A POST request is sent to the server: `https://reqres.in/api/login`  
-**And** a body request is sent like this:
+**And** a body request is sent like this:     
 
 ```json
 {
     "email": ""
 }
 ```
-**WHEN** the server response is status code: 400 Bad Request
-**THEN** server respond back with body result printed like this:
+**WHEN** the server response is status code: 400 Bad Request    
+**THEN** server respond back with body result printed like this:     
 ```json
 {
     "error": "Missing password"
